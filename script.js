@@ -5,6 +5,7 @@ var frame = 0;
 var spacePressed = false;
 var running = false;
 var hits = 0;
+var gyroscope = new Gyroscope({frequency: 60});
 
 var gravity = 0.05
 var maxFrame = 100;
@@ -15,6 +16,12 @@ function initGame() {
     gameCanon = new component(60, 10, "black", 10, gameArea.canvas.height / 2);
     gameCanon.update();
     printHits();
+    gyroscope.addEventListener('reading', (e) => {
+        document.getElementById("px").innerHTML = "X: " + gyroscope.x;
+        document.getElementById("py").innerHTML = "Y: " + gyroscope.y;
+        document.getElementById("pz").innerHTML = "Z: " + gyroscope.z;
+    });
+    gyroscope.start();
 }
 
 function printHits() {
@@ -247,3 +254,4 @@ difficultySlider.oninput = function () {
     document.getElementById("difficultySlider").blur();
     maxFrame = (6 - this.value) * 50;
 }
+

@@ -79,9 +79,6 @@ var gameArea = {
 function handleOrientation(event) {
 
     currentOrientation = event.gamma;
-
-    document.getElementById("currentT").innerHTML = currentOrientation;
-    document.getElementById("neutralT").innerHTML = neutralOrientation;
 }
 
 function resize() {
@@ -89,7 +86,6 @@ function resize() {
     gameArea.canvas.height = gameArea.canvas.parentElement.offsetHeight;
     gameCanon = new component(60, 10, "black", 10, gameArea.canvas.height / 2);
     reset();
-    document.getElementById("viewport").innerHTML = document.documentElement.clientWidth + "<br>" + document.documentElement.clientHeight; // TODO
 }
 
 function component(width, height, color, x, y) {

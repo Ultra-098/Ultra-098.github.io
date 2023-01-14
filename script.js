@@ -247,7 +247,7 @@ function clearmove() {
 }
 
 function openNav() {
-    document.getElementById("sidenav").style.width = "50%";
+    document.getElementById("sidenav").style.width = "90%";
 }
 
 function closeNav() {

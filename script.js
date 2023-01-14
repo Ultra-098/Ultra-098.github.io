@@ -6,9 +6,9 @@ var spacePressed = false;
 var running = false;
 var hits = 0;
 var useOrientation = false;
-var currentOrientation;
+var currentOrientation = 0;
 var neutralOrientation = 0;
-var sensitivty = 10;
+var sensitivity = 10;
 
 var gravity = 0.05
 var maxFrame = 100;

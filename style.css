@@ -154,6 +154,15 @@ footer {
     margin: auto;
 }
 
+.textDiv {
+    text-align: justify;
+    margin: 10px;
+}
+
+#neutralOrientation {
+    margin: 10px 0px 0px 0px;
+}
+
 @media (max-width: 60rem) {
     #mainDiv {
         grid-template-columns: 1fr;

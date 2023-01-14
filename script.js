@@ -289,3 +289,19 @@ difficultySliderSide.oninput = function () {
 function setOrientation() {
     neutralOrientation = currentOrientation;
 }
+
+deviceOrientationSlider.oninput = function () {
+    sensitivity = this.value;
+    document.getElementById("deviceOrientation").innerHTML = "Device Orientation Sensitivity: " + this.value;
+    document.getElementById("deviceOrientationSide").innerHTML = "Device Orientation Sensitivity: " + this.value;
+    document.getElementById("deviceOrientationSideSlider").value = this.value;
+    document.getElementById("deviceOrientationSlider").blur();
+}
+
+deviceOrientationSideSlider.oninput = function () {
+    sensitivity = this.value;
+    document.getElementById("deviceOrientation").innerHTML = "Device Orientation Sensitivity: " + this.value;
+    document.getElementById("deviceOrientationSide").innerHTML = "Device Orientation Sensitivity: " + this.value;
+    document.getElementById("deviceOrientationSlider").value = this.value;
+    document.getElementById("deviceOrientationSideSlider").blur();
+}

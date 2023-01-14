@@ -77,10 +77,11 @@ var gameArea = {
 }
 
 function handleOrientation(event) {
-    let x = event.beta;
-    let y = event.gamma; // TODO
 
-    currentOrientation = y;
+    currentOrientation = event.gamma;
+
+    document.getElementById("currentT").innerHTML = currentOrientation;
+    document.getElementById("neutralT").innerHTML = neutralOrientation;
 }
 
 function resize() {

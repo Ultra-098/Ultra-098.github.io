@@ -25,6 +25,11 @@
         <span id="openSidenav" onclick="openNav()">&#9776;</span>
     </header>
 
+    <div>
+        Current: <p id="currentT"></p>
+        Neutral: <p id="neutralT"></p>
+    </div>
+
     <div id="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div id="sidenavDescription" class="textDiv">
@@ -43,7 +48,7 @@
             <input type="range" min="1" max="5" value="4" step="1" class="whiteBackground slider" id="difficultySliderSide">
         </div>
         <div class="standardDiv">
-            <label class="whiteColor form-label" id="deviceOrientationSide">Device Orientation Sensitivity: </label>
+            <label class="whiteColor form-label" id="deviceOrientationSide">Device Orientation Sensitivity: 10</label>
             <input type="range" min="1" max="50" value="10" step="1" class="whiteBackground slider" id="deviceOrientationSideSlider">
         </div>
         <div class="standardDiv">

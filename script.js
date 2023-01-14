@@ -8,6 +8,7 @@ var hits = 0;
 var useOrientation = false;
 var currentOrientation;
 var neutralOrientation = 0;
+var sensitivty = 10;
 
 var gravity = 0.05
 var maxFrame = 100;
@@ -216,11 +217,11 @@ function updateGameArea() {
             spacePressed = false;
         }
 
-        if (currentOrientation > neutralOrientation) {
-            gameCanon.angle -= 2;
-        }
-        if (currentOrientation < neutralOrientation) {
+        if (currentOrientation > neutralOrientation + sensitivity) {
             gameCanon.angle += 2;
+        }
+        if (currentOrientation < neutralOrientation - sensitivity) {
+            gameCanon.angle -= 2;
         }
 
         gameCanon.update();

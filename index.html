@@ -27,11 +27,11 @@
 
     <div id="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div id="sidenavDescription">
-            Press START to start the game.<br /><br />
-            The goal is to shoot all the red enemy balls with the cannon before they reach the left side.<br /><br />
-            Use the up and down arrow keys to adjust the cannon and the space bar to shoot.<br /><br />
-            Press PAUSE to pause the game or RESET to reset the game.
+        <div id="sidenavDescription" style="text-align: justify; margin: 5px;">
+            The goal is to shoot all the red enemy balls with the cannon before they reach the left side.
+            Use the up and down arrow keys to adjust the cannon and the space bar to shoot.
+            If the device has orientation sensors rotate the device to adjust the cannon angle.
+            Click then on the canvas to shoot.
         </div>
         <br />
         <div class="standardDiv">
@@ -42,6 +42,15 @@
             <label class="whiteColor form-label" id="difficultyLabelSide">Difficulty: 4</label>
             <input type="range" min="1" max="5" value="4" step="1" class="whiteBackground slider" id="difficultySliderSide">
         </div>
+        <div class="standardDiv">
+            <label class="whiteColor form-label" id="deviceOrientationSide">Device Orientation Sensitivity: </label>
+            <input type="range" min="1" max="50" value="10" step="1" class="whiteBackground slider" id="deviceOrientationSideSlider">
+        </div>
+        <div class="standardDiv">
+            <button style="margin: 10px; 0px; 0px; 0px;" class="btn btn-primary" type="button" onclick="setOrientation()">
+                SET Neutral Orientation
+            </button>
+        </div>
     </div>
 
     <div id="mainDiv">
@@ -49,11 +58,11 @@
             <canvas onclick="shoot()" id="game-canvas"></canvas>
         </div>
         <div class="subMainDiv" id="options">
-            <div>
-                Press START to start the game.<br /><br />
-                The goal is to shoot all the red enemy balls with the cannon before they reach the left side.<br /><br />
-                Use the up and down arrow keys to adjust the cannon and the space bar to shoot.<br /><br />
-                Press PAUSE to pause the game or RESET to reset the game.
+            <div style="text-align: justify; padding: 5px;">
+                The goal is to shoot all the red enemy balls with the cannon before they reach the left side.
+                Use the up and down arrow keys to adjust the cannon and the space bar to shoot.
+                If the device has orientation sensors rotate the device to adjust the cannon angle.
+                Click then on the canvas to shoot.
             </div>
             <div class="standardDiv">
                 <label class="form-label" id="gravityLabel">Gravity: 0.05</label>
@@ -62,6 +71,15 @@
             <div class="standardDiv">
                 <label class="form-label" id="difficultyLabel">Difficulty: 4</label>
                 <input type="range" min="1" max="5" value="4" step="1" class="slider" id="difficultySlider">
+            </div>
+            <div class="standardDiv">
+                <label class="form-label" id="deviceOrientation">Device Orientation Sensitivity: </label>
+                <input type="range" min="1" max="50" value="10" step="1" class="slider" id="deviceOrientationSlider">
+            </div>
+            <div class="standardDiv">
+                <button class="btn btn-primary" type="button" onclick="setOrientation()">
+                    SET Neutral Orientation
+                </button>
             </div>
         </div>
     </div>

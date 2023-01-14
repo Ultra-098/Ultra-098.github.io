@@ -285,3 +285,7 @@ difficultySliderSide.oninput = function () {
     document.getElementById("difficultySliderSide").blur();
     maxFrame = (6 - this.value) * 50;
 }
+
+function setOrientation() {
+    neutralOrientation = currentOrientation;
+}

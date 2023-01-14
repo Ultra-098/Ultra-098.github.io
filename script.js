@@ -218,11 +218,11 @@ function updateGameArea() {
             spacePressed = false;
         }
 
-        if (currentOrientation > neutralOrientation + sensitivity) {
-            gameCanon.angle += 2;
-        }
-        if (currentOrientation < neutralOrientation - sensitivity) {
+        if (currentOrientation > neutralOrientation + sensitivity/2) {
             gameCanon.angle -= 2;
+        }
+        if (currentOrientation < neutralOrientation - sensitivity/2) {
+            gameCanon.angle += 2;
         }
 
         gameCanon.update();

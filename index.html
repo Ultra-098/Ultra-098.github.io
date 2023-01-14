@@ -22,40 +22,45 @@
         <button id="reset" class="btn btn-primary" type="button" onclick="reset()">
             RESET
         </button>
-        <span style="font-size: 30px; cursor: pointer; color: white; margin-left: auto;" onclick="openNav()">&#9776;</span>
+        <span id="openSidenav" onclick="openNav()">&#9776;</span>
     </header>
 
     <div id="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div style="color: white; padding-right: 10px;">
+        <div id="sidenavDescription">
             Press START to start the game.<br /><br />
             The goal is to shoot all the red enemy balls with the cannon before they reach the left side.<br /><br />
             Use the up and down arrow keys to adjust the cannon and the space bar to shoot.<br /><br />
             Press PAUSE to pause the game or RESET to reset the game.
         </div>
+        <br />
+        <div class="standardDiv">
+            <label class="whiteColor form-label" id="gravityLabelSide">Gravity: 0.05</label>
+            <input type="range" min="0" max="0.2" value="0.05" step="0.05" class="whiteBackground slider" id="gravitySliderSide">
+        </div>
+        <div class="standardDiv">
+            <label class="whiteColor form-label" id="difficultyLabelSide">Difficulty: 4</label>
+            <input type="range" min="1" max="5" value="4" step="1" class="whiteBackground slider" id="difficultySliderSide">
+        </div>
     </div>
 
     <div id="mainDiv">
-        <div>
-            <p id="px">X: -</p>
-            <p id="py">Y: -</p>
-        </div>
-        <div class="test">
+        <div class="subMainDiv">
             <canvas id="game-canvas"></canvas>
         </div>
-        <div class="test" id="options" style="display: grid;">
+        <div class="subMainDiv" id="options">
             <div>
                 Press START to start the game.<br /><br />
                 The goal is to shoot all the red enemy balls with the cannon before they reach the left side.<br /><br />
                 Use the up and down arrow keys to adjust the cannon and the space bar to shoot.<br /><br />
                 Press PAUSE to pause the game or RESET to reset the game.
             </div>
-            <div style="width: 80%; margin: auto;">
+            <div class="standardDiv">
                 <label class="form-label" id="gravityLabel">Gravity: 0.05</label>
                 <input type="range" min="0" max="0.2" value="0.05" step="0.05" class="slider" id="gravitySlider">
             </div>
-            <div style="width: 80%; margin: auto;">
-                <label class="form-label" id="difficultyLabel">Difficulty: 2</label>
+            <div class="standardDiv">
+                <label class="form-label" id="difficultyLabel">Difficulty: 4</label>
                 <input type="range" min="1" max="5" value="4" step="1" class="slider" id="difficultySlider">
             </div>
         </div>

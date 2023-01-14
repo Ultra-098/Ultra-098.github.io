@@ -15,15 +15,6 @@ function initGame() {
     gameCanon = new component(60, 10, "black", 10, gameArea.canvas.height / 2);
     gameCanon.update();
     printHits();
-    window.addEventListener("deviceorientation", handleOrientation);
-}
-
-function handleOrientation(event) {
-    let x = event.beta;
-    let y = event.gamma;
-    
-    document.getElementById("px").innerHTML = "X: " + x;
-    document.getElementById("py").innerHTML = "Y: " + y;
 }
 
 function printHits() {
@@ -62,8 +53,6 @@ function reset() {
 var gameArea = {
     canvas : document.getElementById("game-canvas"),
     init : function() {
-        //this.canvas.width = 480;
-        //this.canvas.height = 270;
         this.canvas.width = this.canvas.parentElement.offsetWidth;
         this.canvas.height = this.canvas.parentElement.offsetHeight;
         this.context = this.canvas.getContext("2d");
@@ -247,13 +236,32 @@ function closeNav() {
 
 gravitySlider.oninput = function () {
     document.getElementById("gravityLabel").innerHTML = "Gravity: " + this.value;
+    document.getElementById("gravityLabelSide").innerHTML = "Gravity: " + this.value;
+    document.getElementById("gravitySliderSide").value = this.value;
     gravity = parseFloat(this.value);
     document.getElementById("gravitySlider").blur();
 }
 
 difficultySlider.oninput = function () {
     document.getElementById("difficultyLabel").innerHTML = "Difficulty: " + this.value;
+    document.getElementById("difficultyLabelSide").innerHTML = "Difficulty: " + this.value;
+    document.getElementById("difficultySliderSide").value = this.value;
     document.getElementById("difficultySlider").blur();
     maxFrame = (6 - this.value) * 50;
 }
 
+gravitySliderSide.oninput = function () {
+    document.getElementById("gravityLabel").innerHTML = "Gravity: " + this.value;
+    document.getElementById("gravityLabelSide").innerHTML = "Gravity: " + this.value;
+    document.getElementById("gravitySlider").value = this.value;
+    gravity = parseFloat(this.value);
+    document.getElementById("gravitySliderSide").blur();
+}
+
+difficultySliderSide.oninput = function () {
+    document.getElementById("difficultyLabel").innerHTML = "Difficulty: " + this.value;
+    document.getElementById("difficultyLabelSide").innerHTML = "Difficulty: " + this.value;
+    document.getElementById("difficultySlider").value = this.value;
+    document.getElementById("difficultySliderSide").blur();
+    maxFrame = (6 - this.value) * 50;
+}

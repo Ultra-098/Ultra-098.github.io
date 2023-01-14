@@ -5,6 +5,9 @@ var frame = 0;
 var spacePressed = false;
 var running = false;
 var hits = 0;
+var useOrientation = false;
+var currentOrientation;
+var neutralOrientation = 0;
 
 var gravity = 0.05
 var maxFrame = 100;
@@ -65,10 +68,18 @@ var gameArea = {
             gameArea.keys[e.key] = false;
         })
         window.addEventListener("resize", resize, false);
+        window.addEventListener("deviceorientation", handleOrientation);
     },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
+}
+
+function handleOrientation(event) {
+    let x = event.beta;
+    let y = event.gamma; // TODO
+
+    currentOrientation = y;
 }
 
 function resize() {
@@ -204,6 +215,14 @@ function updateGameArea() {
         } else {
             spacePressed = false;
         }
+
+        if (currentOrientation > neutralOrientation) {
+            gameCanon.angle -= 2;
+        }
+        if (currentOrientation < neutralOrientation) {
+            gameCanon.angle += 2;
+        }
+
         gameCanon.update();
         deleteCollisions();
         printHits();
